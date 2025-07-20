@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRoutes, useParams, useNavigate } from "react-router-dom";
 import AuthContext from "./context/authContext";
+import { ThemeProvider } from "./context/themeContext";
 import routes from "./routes";
 import "./styles/reset.css";
 import "./styles/App.css";
@@ -188,24 +189,26 @@ const App = () => {
   }, []);
 
   return (
-    <AuthContext.Provider
-      value={{
-        baseUrl,
-        setLocalStorage,
-        getLocalStorage,
-        calcuteRelativeTimeDifference,
-        isLogin,
-        LogOut,
-        LoginUser,
-        user,
-        RefreshToken
-      }}
-    >
-      {/* <UpdatePage /> */}
-      {/* <DevAuth> */}
-        {router}
-      {/* </DevAuth> */}
-    </AuthContext.Provider>
+    <ThemeProvider>
+      <AuthContext.Provider
+        value={{
+          baseUrl,
+          setLocalStorage,
+          getLocalStorage,
+          calcuteRelativeTimeDifference,
+          isLogin,
+          LogOut,
+          LoginUser,
+          user,
+          RefreshToken
+        }}
+      >
+        {/* <UpdatePage /> */}
+        {/* <DevAuth> */}
+          {router}
+        {/* </DevAuth> */}
+      </AuthContext.Provider>
+    </ThemeProvider>
   );
 }
 
