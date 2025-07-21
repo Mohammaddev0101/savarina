@@ -156,9 +156,9 @@ export function Contact() {
   return (
     <>
       <NavbarDefault />
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 pt-20">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20">
+        <section className="bg-blue-gray-900 text-white py-20">
           <div className="container mx-auto lg:w-[80%] w-[90%] text-center">
             <h1 className="text-4xl md:text-6xl font-bold lalezar mb-4">
               ارتباط با ما
@@ -274,7 +274,7 @@ export function Contact() {
                     </div>
                     
                     <Button 
-                      className="w-full bg-gradient-to-r from-blue-600 to-purple-600" 
+                      className="w-full bg-blue-gray-900" 
                       onClick={CommentHandler}
                       disabled={loadingSub}
                     >
